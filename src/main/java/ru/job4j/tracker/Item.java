@@ -9,7 +9,6 @@ public class Item {
     LocalDateTime created = LocalDateTime.now();
 
     public Item() {
-
     }
 
     public Item(int id) {
