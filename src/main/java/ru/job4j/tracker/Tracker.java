@@ -47,22 +47,23 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        if (findById(id) == null) {
-            return false;
+        int index = indexOf(id);
+        boolean rsl = index != -1;
+        if (rsl) {
+            item.setId(id);      //Присваиваем номер новому обьекту
+            items[index] = item; //Вносим обьект в массив
         }
-        item.setId(id);             //Присваиваем номер новому обьекту
-        items[indexOf(id)] = item;  //Вносим обьект в массив
-        return true;
+        return rsl;
     }
 
     public boolean delete(int id) {
-        if (findById(id) == null) {
-            return false;
-        }
         int index = indexOf(id);
-        System.arraycopy(items, index + 1, items, index, size - index - 1);
-        items[size - 1] = null;
-        size--;
-        return true;
+        boolean rsl = index != -1;
+        if (rsl) {
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size - 1] = null;
+            size--;
+        }
+        return rsl;
     }
 }
