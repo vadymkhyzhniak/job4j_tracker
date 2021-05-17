@@ -18,11 +18,9 @@ public class Tracker {
     }
 
     public Item[] findByName(String key) {
-        //
-        Item[] comp = findAll();
-        Item[] rsl = new Item[comp.length];
+        Item[] rsl = new Item[items.length];
         int rsl_size = 0;
-        for (Item item : comp) {
+        for (Item item : items) {
             if (item.getName().equals(key)) {
                 rsl[rsl_size++] = item;
             }
