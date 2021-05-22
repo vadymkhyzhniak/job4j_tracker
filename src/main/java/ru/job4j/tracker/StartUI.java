@@ -16,7 +16,6 @@ public class StartUI {
                 run = false;
             }
         }
-
     }
 
     private void showMenu() {
